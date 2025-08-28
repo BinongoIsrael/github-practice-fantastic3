@@ -102,3 +102,31 @@ footer {
     grid-row: 3;
 }
 
+
+/*about section style*/
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.about-section img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* makes image round */
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-text);
+}
+
