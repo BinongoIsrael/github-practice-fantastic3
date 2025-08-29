@@ -87,6 +87,13 @@ nav a.active {
     grid-template-columns: auto 1fr;
 }
 
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
 nav {
     grid-column: 1;
     grid-row: 1/4;
@@ -130,3 +137,52 @@ footer {
     color: var(--primary-text);
 }
 
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: auto;  
+    padding: 50px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    border-width: 3px;
+    max-width: 900px;
+    font-size: 1.25rem;
+}
+
+form label {
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+}
+
+form input,
+form textarea {
+    font-size: 1.1em;
+    padding: 0.75em;
+    border-radius: 30px;
+    border: 1px solid #888;
+    margin-bottom: 0.5em;
+}
+
+form textarea {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 120px;
+    resize: vertical;
+}
+
+form button {
+    font-size: 1.1em;
+    padding: 0.75em 1.5em;
+    border-radius: 6px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+form button:hover {
+    background: #555;
+}
