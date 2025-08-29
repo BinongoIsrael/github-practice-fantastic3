@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  loadComponent("header", "components/header.html", () => {
+  loadComponent("header", "/components/header.html", () => {
     // Once header is loaded, set the page title from body attribute
     const pageTitle = document.body.getAttribute("data-title");
     const titleElement = document.getElementById("page-title");
