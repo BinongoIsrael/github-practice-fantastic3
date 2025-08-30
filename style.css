@@ -271,7 +271,6 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 2rem;
 }
 
 .card-grid {
@@ -279,31 +278,42 @@ footer {
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
   grid-template-rows: repeat(2, 1fr);    /* 2 rows */
   gap: 20px;  /* space between cards */
-  width: 80%; /* shrink grid so it fits nicely */
-  max-width: 800px;
+  grid-auto-flow: column;
+  
 }
 
 .card-box {
-  background-color: #f0f0f0;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
+    width: 100%;
+    max-width: 800px;
+    min-height: 250px;
+    display: flex;
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+    gap: 1em;
 }
 
 .card-box img {
-  width: 100%;
-  height: auto;
+  width: 8rem;
+  height: 8rem;
   border-radius: 10px;
 }
 
-.about-text {
-    max-width: 600px;
+.card-text {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-left: 0.5em;
+    padding-right: 1em;
 }
-
-.about-text h2 {
-    margin-bottom: 1rem;
-    color: var(--primary-text);
+.card-text h2 {
+    margin-bottom: 1em;
+}
+.card-text p {
+    text-align: justify;
+    line-height: 1em;
 }
 
 /* Form styles */
