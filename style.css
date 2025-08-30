@@ -295,48 +295,64 @@ footer {
 form {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    margin: auto;  
-    padding: 50px;
-    border: 2px solid #333;
+    gap: 0.75rem; 
+    margin: auto;
+    padding: 1.5rem;
+    border: 2px solid var(--secondary-text);
     border-radius: 10px;
-    border-width: 3px;
-    max-width: 900px;
-    font-size: 1.25rem;
+    max-width: 400px; 
+    width: 100%; 
+    font-size: 1rem; 
+    box-sizing: border-box;
 }
 
 form label {
-    font-size: 1.2em;
-    margin-bottom: 0.3em;
+    font-size: 1rem; 
+    font-weight: 500;
+    color: var(--primary-text);
 }
 
 form input,
 form textarea {
-    font-size: 1.1em;
-    padding: 0.75em;
-    border-radius: 30px;
-    border: 1px solid #888;
-    margin-bottom: 0.5em;
+    font-size: 0.95rem; 
+    padding: 0.5rem 0.75rem; 
+    border-radius: 8px; 
+    border: 1px solid var(--secondary-text);
+    background: var(--surface);
+    color: var(--primary-text);
+    transition: border-color var(--transition), background var(--transition);
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: var(--accent);
+    box-shadow: var(--focus);
+    outline: none;
 }
 
 form textarea {
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 120px;
+    min-height: 80px; 
+    max-height: 150px; 
     resize: vertical;
 }
 
+
 form button {
-    font-size: 1.1em;
-    padding: 0.75em 1.5em;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;   
     border-radius: 6px;
-    background: #333;
-    color: #fff;
+    background: var(--accent);
+    color: var(--header-text);
     border: none;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background var(--transition);
 }
 form button:hover {
-    background: #555;
+    background: var(--link-hover-bg);
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+form button:focus {
+    box-shadow: var(--focus);
 }
