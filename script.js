@@ -43,7 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadComponent('navbar', '/components/navbar.html', () => {
         // Set active link based on current page
-        const currentPath = window.location.pathname === '/' ? 'index.html' : window.location.pathname.split('/').pop() || 'index.html';
+        let currentPath = window.location.pathname;
+        if (currentPath === '/' || currentPath === '') {
+            currentPath = '/index.html';
+        }
         const navLinks = document.querySelectorAll('nav a');
         navLinks.forEach(link => {
             const href = link.getAttribute('href');
