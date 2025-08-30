@@ -113,12 +113,27 @@ footer {
     padding: 2rem;
 }
 
-.about-section img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* makes image round */
-    object-fit: cover;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+  gap: 20px;  /* space between cards */
+  width: 80%; /* shrink grid so it fits nicely */
+  max-width: 800px;
+}
+
+.card-box {
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.card-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .about-text {
