@@ -267,54 +267,91 @@ footer {
 /*about section style*/
 
 .about-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; /* Add breathing room */
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  grid-template-rows: repeat(2, 1fr);    /* 2 rows */
-  gap: 20px;  /* space between cards */
-  grid-auto-flow: column;
-  
+  grid-template-columns: repeat(2, 1fr); /* 2 columns by default */
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px; /* prevents stretching too much */
 }
 
 .card-box {
-    width: 100%;
-    max-width: 800px;
-    min-height: 250px;
-    display: flex;
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 20px;
-    align-items: center;
-    gap: 1em;
+  display: flex;
+  align-items: center;
+  background-color: var(--surface); /*  theme-aware */
+  border: 1px solid var(--shadow);  /*  slimmer + theme-aware */
+  border-radius: 10px;
+  padding: 20px;
+  gap: 1em;
+  min-height: 220px; /*  slightly smaller to avoid scroll */
+  transition: transform 0.2s ease, background var(--transition), color var(--transition);
+}
+
+.card-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px var(--shadow); /*  hover polish */
 }
 
 .card-box img {
   width: 8rem;
   height: 8rem;
   border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid var(--shadow); /*  image visible in dark mode */
 }
 
 .card-text {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding-left: 0.5em;
-    padding-right: 1em;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5em;
+  padding-right: 1em;
 }
+
 .card-text h2 {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
+  font-size: 1.5rem;
+  color: var(--text); /*  uses theme */
 }
+
 .card-text p {
-    text-align: justify;
-    line-height: 1em;
+  text-align: justify;
+  line-height: 1.4em; /*  improved readability */
+  font-size: 1rem;
+  color: var(--secondary-text); /*  uses theme */
 }
+
+/* Mobile screens (1 column) */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+
+  .card-box {
+    flex-direction: column; /* image on top, text below */
+    text-align: center;
+  }
+
+  .card-box img {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Larger screens (still 2x2 for now) */
+@media (min-width: 1200px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
 
 /* Form styles */
 form {
